@@ -1,6 +1,6 @@
 # ONTAP Cluster Management IP. List only one ONTAP cluster IP.
 [ontap]
-10.102.0.30
+172.28.0.149
 
 [nexus]
 n9kA ansible_host=10.102.0.3 ansible_user=admin ansible_password=<password> ansible_network_os=nxos
