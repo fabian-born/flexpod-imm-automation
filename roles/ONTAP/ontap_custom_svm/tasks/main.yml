@@ -267,3 +267,21 @@
   tags:
     - ontap_export_policy_rule
 
+
+# Create a default route in infra SVM
+- name: Create a default route in infra SVM
+  netapp.ontap.na_ontap_net_routes:
+    state: present
+    vserver: "{{svm_specs.svm_name}}"
+    destination: "0.0.0.0/0"
+    gateway: "{{item.gateway}}"
+    hostname: "{{inventory_hostname}}"
+    username: "{{username}}"
+    password: "{{password}}"
+    https: true
+    validate_certs: false
+  with_items:
+    - "{{svm_specs.svm_mgmt_lif}}"
+  tags:
+    - ontap_svm_default_route
+
