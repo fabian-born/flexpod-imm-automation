@@ -1,0 +1,7 @@
+- name: Generate Trident Backend
+  template:
+    src: 'trident_backend.yaml.j2'
+    dest: "{{ item }}"
+    mode: 0644
+  loop:
+    - "{{ playbook_dir }}/custom-config-files/trident_backend_{{ svm_specs.svm_name}}.yaml"

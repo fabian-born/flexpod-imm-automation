@@ -5,4 +5,5 @@
   connection: local
   roles:
   - env_vars
-  - ONTAP/ontap_custom_svm
+#  - ONTAP/ontap_custom_svm
+  - gen_configs
