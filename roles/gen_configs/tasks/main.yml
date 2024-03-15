@@ -1,6 +1,13 @@
+- name: current_working_directory
+  ansible.builtin.debug:
+    var: playbook_dir
+
+- name: Setting facts so that they will be persisted in the fact cache
+  ansible.builtin.set_fact:
+    storage_prefix: "{{ svm_specs.svm_name.split('_') | last}}"
 - name: Generate Trident Backend
   template:
-    src: 'trident_backend.yaml.j2'
+    src: 'trident_backend.yml.j2'
     dest: "{{ item }}"
     mode: 0644
   loop:

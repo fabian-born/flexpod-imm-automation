@@ -5,7 +5,7 @@ metadata:
 type: Opaque
 stringData:
   username: vsadmin
-  password: {{ svm_specs.vsadmin_password }}
+  password: netapp123!
 ---
 apiVersion: trident.netapp.io/v1
 kind: TridentBackendConfig
@@ -14,11 +14,11 @@ metadata:
 spec:
   version: 1
   storageDriverName: ontap-nas
-  managementLIF: {{ svm_specs.svm_mgmt_lif.address }}
+  managementLIF: 172.28.4.74
   backendName: tbc-ontap-nas
   exportPolicy: default
-  storagePrefix: "{{ storage_prefix }}_"
+  storagePrefix: "devocp002_"
   autoExportPolicy: true
-  autoExportCIDRs: ['{{ svm_specs.client_match }}']
+  autoExportCIDRs: ['172.28.11.0/24']
   credentials:
     name: backend-tbc-ontap-secret
