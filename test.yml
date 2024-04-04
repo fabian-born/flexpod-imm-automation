@@ -1,5 +1,5 @@
 ---
-#Execute the below ONTAP Role after Nexus playbook
+# Execute the below ONTAP Role after Nexus playbook
 - hosts: ontap
   gather_facts: False
   connection: local
