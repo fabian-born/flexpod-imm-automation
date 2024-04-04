@@ -1,0 +1,8 @@
+---
+#Execute the below ONTAP Role after Nexus playbook
+- hosts: ontap
+  gather_facts: False
+  connection: local
+  roles:
+  - env_vars
+  - test

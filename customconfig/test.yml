@@ -1,0 +1,2 @@
+ib_vlan_name: 'IB-MGMT-2' # IN BAND Management VLAN
+# ib_vlan_id: 1021
